@@ -16,7 +16,7 @@
           <%= f.password_field :password, class: "form-control shadow rounded", id: "passwordField", placeholder: "Enter Password" %>
         </div>
         <%= f.submit(@user.new_record? ? 'Create Account' : "Update Account", class: "btn btn-orange text-white float-right ml-2") %>
-        <%=link_to 'Cancel', articles_path, class: "btn btn-danger float-right text-white"%>
+        <%=link_to 'Cancel', user, class: "btn btn-danger float-right text-white"%>
       <% end %>
     </div>
   </div>
