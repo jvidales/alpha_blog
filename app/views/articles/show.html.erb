@@ -9,6 +9,11 @@
         </div>
         <div class="card-body">
           <div class="card-text text-left"><%= simple_format(@article.description) %></div>
+          <% if @article.categories.any? %>
+            <div class="card-text text-left">
+              <p>Tags: <%= render @article.categories %></p>
+            </div>
+          <% end %>
           <% if logged_in? && (@article.user == current_user || current_user.admin?) %>
             <%= link_to 'Edit', edit_article_path(@article), class:"btn btn-outline-primary" %>
             <%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: "Are you sure?"}, class:"btn btn-outline-danger"%>
